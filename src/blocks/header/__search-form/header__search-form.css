@@ -1,0 +1,19 @@
+.header__search-form {
+    width: 418px;
+    height: 48px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+}
+
+@media screen and (max-width: 620px) {
+    .header__search-form {
+        width: 340px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .header__search-form {
+        width: 310px;
+    }
+}

@@ -1,0 +1,6 @@
+.element{
+    box-sizing: border-box;
+    border: 1px solid #E1E1E1;
+    max-width: 280px;
+    max-height: 328px;
+}

@@ -1,0 +1,31 @@
+.footer__contact-container {
+    display: flex;
+    align-items: center;
+    margin-left: 54px;
+}
+
+.footer__contact-container:nth-child(2) {
+    margin-left: 127px;
+}
+
+@media screen and (max-width: 1599px) {
+    .footer__contact-container {
+        margin-left: 38px;
+    }
+
+    .footer__contact-container:nth-child(2) {
+        margin-left: 52px;
+    }
+}
+
+@media screen and (max-width: 1023px) {
+    .footer__contact-container {
+        margin-top: 20px;
+        align-self: flex-start;
+        margin-left: 0;
+    }
+
+    .footer__contact-container:nth-child(2) {
+        margin-left: 0;
+    }
+}

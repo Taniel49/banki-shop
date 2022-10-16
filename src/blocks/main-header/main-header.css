@@ -1,0 +1,30 @@
+.main-header {
+    margin: 45px auto 39px;
+    padding: 0;
+    max-width: 1216px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 150%;
+    color: #343030;
+    font-family: 'Merriweather';
+}
+
+@media screen and (max-width: 1599px) {
+    .main-header {
+        max-width: 904px;
+    }
+}
+
+@media screen and (max-width: 1023px) {
+    .main-header {
+        max-width: 594px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .main-header {
+        text-align: center;
+    }
+
+}

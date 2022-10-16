@@ -1,0 +1,17 @@
+.navigation {
+    margin-left: 96px;
+}
+
+@media screen and (max-width: 1599px) {
+    .navigation {
+        margin-left: 0;
+    }
+}
+
+@media screen and (max-width: 1023px) {
+    .navigation {
+        display: flex;
+        flex-direction: column;
+        align-self: flex-start;
+    }
+}

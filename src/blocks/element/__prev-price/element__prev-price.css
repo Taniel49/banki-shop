@@ -1,0 +1,9 @@
+.element__prev-price {
+    font-family: 'Merriweather';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 150%;
+    text-decoration-line: line-through;
+    color: #A0A0A0;
+}

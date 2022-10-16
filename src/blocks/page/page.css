@@ -1,0 +1,9 @@
+.page {
+    margin: 0;
+    padding: 0;
+    max-width: 100%;
+    font-family: 'Merriweather';
+    font-weight: 400;
+    font-style: normal;
+    background: #F6F3F3;
+}

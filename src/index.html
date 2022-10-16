@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>shop</title>
+    <script src="https://unpkg.com/vue"></script>
+</head>
+<body class="page" id="app">
+<header class="header">
+    <div class="header__container">
+        <button class="menu-button" @click="onMenuClick"><img src="<%=require('./images/menu.svg')%>"></button>
+        <nav class="navigation navigation_header">
+            <a class="navigation__item" href="#">Каталог</a>
+            <a class="navigation__item" href="#">Доставка</a>
+            <a class="navigation__item" href="#">Оплата</a>
+            <a class="navigation__item" href="#">Контакты</a>
+            <a class="navigation__item" href="#">О компании</a>
+        </nav>
+        <form class="header__search-form" @submit="onSubmit">
+            <input class="header__search-input" type="text" required placeholder="Поиск по названию картины">
+            <button class="header__search-button" type="submit">Найти</button>
+        </form>
+    </div>
+    <div :class="isMenuOpened ? 'menu menu_opened' : 'menu'">
+        <div class="menu__container">
+            <button class="menu__close-button" type="button" @click="onCloseMenuClick"></button>
+            <nav class="navigation navigation_menu">
+                <a class="navigation__item" href="#">Каталог</a>
+                <a class="navigation__item" href="#">Доставка</a>
+                <a class="navigation__item" href="#">Оплата</a>
+                <a class="navigation__item" href="#">Контакты</a>
+                <a class="navigation__item" href="#">О компании</a>
+            </nav>
+        </div>
+    </div>
+</header>
+<main>
+    <h1 class="main-header">Картины эпохи Возрождения</h1>
+    <section class="elements">
+        <article v-for="card in filter" :key="card.id"
+                 :class="card.isPurchased ? 'element element_sold' : 'element'">
+            <img class="element__image" :src="card.cardImage" :alt="card.cardName" @click="onImageClick(card)">
+            <h2 class="element__header">{{card.cardName}}</h2>
+            <div v-if="!card.isPurchased" class="element__container">
+                <div class="element__prices">
+                    <span class="element__prev-price">{{card.firstPrice}}</span>
+                    <span class="element__final-price">{{card.finalPrice}}</span>
+                </div>
+                <button :class="card.isAdded ? 'element__buy-button element__buy-button_added' : 'element__buy-button'"
+                        type="button" @click="onClick(card)"><img class="element__button-sign"
+                                                                  :class="card.isAdded ? 'element__button-sign element__button-sign_visible' : 'element__button-sign'"
+                                                                  src="<%=require('./images/Vector.svg')%>">{{card.isInProcess
+                    ?
+                    buttonInProcessText :(card.isAdded ? buttonAddedText : buttonText)}}
+                </button>
+            </div>
+            <span v-else class="element__sold-caption">Продана на аукционе</span>
+        </article>
+    </section>
+    <div :class="!isPopupOpened ? 'popup' : 'popup popup_opened'">
+        <div class="popup__container">
+            <button class="popup__close-button" type="button" id="profile-close-button" @click="onCloseClick"></button>
+            <img class="popup__image" :src="popupImage" alt="Изображение товара">
+            <h2 class="element__header">{{popupName}}</h2>
+            <p class="element__info">{{popupInfo}}</p>
+            <div class="element__container">
+                <span class="element__final-price">{{popupPrice}}</span>
+            </div>
+        </div>
+    </div>
+</main>
+<footer class="footer">
+    <div class="footer__container">
+        <nav class="navigation">
+            <a class="navigation__item">Каталог</a>
+            <a class="navigation__item">Доставка</a>
+            <a class="navigation__item">Оплата</a>
+            <a class="navigation__item">Контакты</a>
+            <a class="navigation__item">О компании</a>
+        </nav>
+        <div class="footer__contact-container">
+            <img class="footer__contact-img" src="<%=require('./images/phone.svg')%>">
+            <span class="footer__contact">+7 (812) 555-55-55</span>
+        </div>
+        <div class="footer__contact-container">
+            <img class="footer__contact-img" src="<%=require('./images/pin.svg')%>">
+            <span class="footer__contact">г. Санкт-Петербург, ул. Ефимова, 3</span>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

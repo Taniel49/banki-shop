@@ -1,0 +1,21 @@
+.header__search-button{
+    padding: 0;
+    font-size: 14px;
+    line-height: 21px;
+    font-weight: 700;
+    text-align: center;
+    background-color: #403432;
+    color: #FFFFFF;
+    width: 122px;
+    height: 48px;
+    border:none;
+    appearance: none;
+    border-radius: 0;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+.header__search-button:hover{
+    transition: ease-in;
+    background-color: #776763;
+}

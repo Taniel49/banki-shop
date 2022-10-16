@@ -1,0 +1,22 @@
+.element__buy-button{
+    font-family: Merriweather;
+    padding: 0;
+    font-size: 14px;
+    line-height: 21px;
+    font-weight: 700;
+    text-align: center;
+    background-color: #382E2B;
+    color: #FFFFFF;
+    width: 118px;
+    height: 48px;
+    border:none;
+    appearance: none;
+    border-radius: 0;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+.element__buy-button:hover{
+    transition: ease-in;
+    background-color: #776763;
+}

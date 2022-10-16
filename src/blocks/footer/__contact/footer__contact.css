@@ -1,0 +1,14 @@
+.footer__contact {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    color: #555555;
+    margin-left: 10px;
+}
+
+@media screen and (max-width: 1599px) {
+    .footer__contact {
+        font-size: 12px;
+    }
+}
